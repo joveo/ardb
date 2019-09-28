@@ -31,7 +31,7 @@
 # Created on: 2013-3-28
 #     Author: yinqiwen
 
-CXX=-std=c++11 g++ -std=gnu++0x
+CXX=g++
 CC=gcc
 
 ARDB_VERSION=0.10.0
