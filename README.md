@@ -118,3 +118,12 @@ RocksDB Options:
 ## Community
 
   - Join the [mailing list](https://groups.google.com/forum/#!forum/ardb-nosql)(Subscribe via [email](mailto:ardb-nosql+subscribe@googlegroups.com))
+
+## Redis Sentinal
+Redis sentinal manages cluster management and performs failover in a master slave architecture
+
+install: 
+https://joveojira.atlassian.net/wiki/spaces/EP/pages/1578696877/How+to+Set+up+Distributed+Rocks+DB
+
+install python 
+pip install slackclient
