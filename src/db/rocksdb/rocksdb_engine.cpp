@@ -766,7 +766,7 @@ OP_NAMESPACE_BEGIN
         }
         if (strcasecmp(g_db->GetConf().rocksdb_compaction.c_str(), "OptimizeLevelStyleCompaction") == 0)
         {
-            ERROR_LOG("compaction ===> OptimizeLevelStyleCompaction")
+            ERROR_LOG("compaction ===> OptimizeLevelStyleCompaction");
             m_options.OptimizeLevelStyleCompaction();
 
         }
@@ -783,7 +783,7 @@ OP_NAMESPACE_BEGIN
         m_options.IncreaseParallelism();
         m_options.stats_dump_period_sec = (unsigned int) g_db->GetConf().statistics_log_period;
         m_dbdir = dir;
-        ERROR_LOG("all Options ===>")
+        ERROR_LOG("all Options ===>");
         return ReOpen(m_options);
     }
 
