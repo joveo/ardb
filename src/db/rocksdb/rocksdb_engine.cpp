@@ -853,6 +853,12 @@ OP_NAMESPACE_BEGIN
 
     int RocksDBEngine::Put(Context& ctx, const KeyObject& key, const ValueObject& value)
     {
+         //Remove this later
+        DEBUG_LOG("column family");
+        std::string ks;
+        key.GetKey().ToString(ks);
+        DEBUG_LOG(ks.c_str());
+
         rocksdb::Status s;
         ColumnFamilyHandlePtr cfp = GetColumnFamilyHandle(ctx, key.GetNameSpace(), ctx.flags.create_if_notexist);
         rocksdb::ColumnFamilyHandle* cf = cfp.get();
@@ -933,10 +939,10 @@ OP_NAMESPACE_BEGIN
     int RocksDBEngine::Get(Context& ctx, const KeyObject& key, ValueObject& value)
     {
         ColumnFamilyHandlePtr cfp = GetColumnFamilyHandle(ctx, key.GetNameSpace(), false);
+        //Remove this later
         DEBUG_LOG("column family");
         std::string ks;
         key.GetKey().ToString(ks);
-        WARN_LOG("Invalid merge op which decode faild for key:%s", ks.c_str());
         DEBUG_LOG(ks.c_str());
         rocksdb::ColumnFamilyHandle* cf = cfp.get();
         if (NULL == cf)
@@ -1098,6 +1104,11 @@ OP_NAMESPACE_BEGIN
 
     Iterator* RocksDBEngine::Find(Context& ctx, const KeyObject& key)
     {
+         //Remove this later
+        DEBUG_LOG("column family find");
+        std::string ks;
+        key.GetKey().ToString(ks);
+        DEBUG_LOG(ks.c_str());
         rocksdb::ReadOptions opt;
         opt.snapshot = (const rocksdb::Snapshot*) ctx.engine_snapshot;
         opt.fill_cache = g_db->GetConf().rocksdb_iter_fill_cache;
