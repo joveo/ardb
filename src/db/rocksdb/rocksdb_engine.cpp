@@ -933,7 +933,7 @@ OP_NAMESPACE_BEGIN
     int RocksDBEngine::Get(Context& ctx, const KeyObject& key, ValueObject& value)
     {
         ColumnFamilyHandlePtr cfp = GetColumnFamilyHandle(ctx, key.GetNameSpace(), false);
-        DEBUG_LOG("column family")
+        DEBUG_LOG("column family");
         std::string ks;
         key.GetKey().ToString(ks);
         WARN_LOG("Invalid merge op which decode faild for key:%s", ks.c_str());
