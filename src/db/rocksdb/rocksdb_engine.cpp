@@ -933,8 +933,9 @@ OP_NAMESPACE_BEGIN
     int RocksDBEngine::Get(Context& ctx, const KeyObject& key, ValueObject& value)
     {
         ColumnFamilyHandlePtr cfp = GetColumnFamilyHandle(ctx, key.GetNameSpace(), false);
-        std::string ks;
-        DEBUG_LOG("column family",key.GetNameSpace.ToString(ks), key.GetKey.ToString(ks));
+        DEBUG_LOG("column family")
+        DEBUG_LOG(key);
+        DEBUG_LOG(key.GetNameSpace());
         rocksdb::ColumnFamilyHandle* cf = cfp.get();
         if (NULL == cf)
         {
