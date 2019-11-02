@@ -854,10 +854,13 @@ OP_NAMESPACE_BEGIN
     int RocksDBEngine::Put(Context& ctx, const KeyObject& key, const ValueObject& value)
     {
          //Remove this later
-        DEBUG_LOG("column family");
+        DEBUG_LOG("column family put");
         std::string ks;
+        std::string nameSpace;
+        key.GetNameSpace.toString(nameSpace);
         key.GetKey().ToString(ks);
         DEBUG_LOG(ks.c_str());
+        DEBUG_LOG(nameSpace.c_str())
 
         rocksdb::Status s;
         ColumnFamilyHandlePtr cfp = GetColumnFamilyHandle(ctx, key.GetNameSpace(), ctx.flags.create_if_notexist);
@@ -940,10 +943,13 @@ OP_NAMESPACE_BEGIN
     {
         ColumnFamilyHandlePtr cfp = GetColumnFamilyHandle(ctx, key.GetNameSpace(), false);
         //Remove this later
-        DEBUG_LOG("column family");
+        DEBUG_LOG("column family get");
         std::string ks;
+        std::string nameSpace;
+        key.GetNameSpace.toString(nameSpace);
         key.GetKey().ToString(ks);
         DEBUG_LOG(ks.c_str());
+        DEBUG_LOG(nameSpace.c_str())
         rocksdb::ColumnFamilyHandle* cf = cfp.get();
         if (NULL == cf)
         {
@@ -1107,8 +1113,11 @@ OP_NAMESPACE_BEGIN
          //Remove this later
         DEBUG_LOG("column family find");
         std::string ks;
+        std::string nameSpace;
+        key.GetNameSpace.toString(nameSpace);
         key.GetKey().ToString(ks);
         DEBUG_LOG(ks.c_str());
+        DEBUG_LOG(nameSpace.c_str())
         rocksdb::ReadOptions opt;
         opt.snapshot = (const rocksdb::Snapshot*) ctx.engine_snapshot;
         opt.fill_cache = g_db->GetConf().rocksdb_iter_fill_cache;
