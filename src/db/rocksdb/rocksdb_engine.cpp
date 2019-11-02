@@ -857,7 +857,7 @@ OP_NAMESPACE_BEGIN
         DEBUG_LOG("column family put");
         std::string ks;
         std::string nameSpace;
-        key.GetNameSpace().toString(nameSpace);
+        key.GetNameSpace().AsString();
         key.GetKey().ToString(ks);
         DEBUG_LOG(ks.c_str());
         DEBUG_LOG(nameSpace.c_str());
@@ -946,7 +946,7 @@ OP_NAMESPACE_BEGIN
         DEBUG_LOG("column family get");
         std::string ks;
         std::string nameSpace;
-        key.GetNameSpace().toString(nameSpace);
+        key.GetNameSpace().AsString());
         key.GetKey().ToString(ks);
         DEBUG_LOG(ks.c_str());
         DEBUG_LOG(nameSpace.c_str());
@@ -1114,7 +1114,7 @@ OP_NAMESPACE_BEGIN
         DEBUG_LOG("column family find");
         std::string ks;
         std::string nameSpace;
-        key.GetNameSpace().toString(nameSpace);
+        key.GetNameSpace().AsString();
         key.GetKey().ToString(ks);
         DEBUG_LOG(ks.c_str());
         DEBUG_LOG(nameSpace.c_str());
