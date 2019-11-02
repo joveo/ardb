@@ -860,7 +860,7 @@ OP_NAMESPACE_BEGIN
         key.GetNameSpace.toString(nameSpace);
         key.GetKey().ToString(ks);
         DEBUG_LOG(ks.c_str());
-        DEBUG_LOG(nameSpace.c_str())
+        DEBUG_LOG(nameSpace.c_str());
 
         rocksdb::Status s;
         ColumnFamilyHandlePtr cfp = GetColumnFamilyHandle(ctx, key.GetNameSpace(), ctx.flags.create_if_notexist);
@@ -949,7 +949,7 @@ OP_NAMESPACE_BEGIN
         key.GetNameSpace.toString(nameSpace);
         key.GetKey().ToString(ks);
         DEBUG_LOG(ks.c_str());
-        DEBUG_LOG(nameSpace.c_str())
+        DEBUG_LOG(nameSpace.c_str());
         rocksdb::ColumnFamilyHandle* cf = cfp.get();
         if (NULL == cf)
         {
@@ -1117,7 +1117,7 @@ OP_NAMESPACE_BEGIN
         key.GetNameSpace.toString(nameSpace);
         key.GetKey().ToString(ks);
         DEBUG_LOG(ks.c_str());
-        DEBUG_LOG(nameSpace.c_str())
+        DEBUG_LOG(nameSpace.c_str());
         rocksdb::ReadOptions opt;
         opt.snapshot = (const rocksdb::Snapshot*) ctx.engine_snapshot;
         opt.fill_cache = g_db->GetConf().rocksdb_iter_fill_cache;
