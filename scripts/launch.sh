@@ -3,7 +3,7 @@
 start() {
    echo "starting dynomite... "
    cd /home/ubuntu/ardb
-   sudo ./src/ardb-server ardb.conf
+   sudo /home/ubuntu/ardb/ardb/src/ardb-server /home/ubuntu/ardb/ardb/configs/ardb.conf
 }
 
 stop() {
