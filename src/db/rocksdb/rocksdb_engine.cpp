@@ -934,8 +934,10 @@ OP_NAMESPACE_BEGIN
     {
         ColumnFamilyHandlePtr cfp = GetColumnFamilyHandle(ctx, key.GetNameSpace(), false);
         DEBUG_LOG("column family")
-        DEBUG_LOG(key);
-        DEBUG_LOG(key.GetNameSpace());
+        std::string ks;
+        key.GetKey().ToString(ks);
+        WARN_LOG("Invalid merge op which decode faild for key:%s", ks.c_str());
+        DEBUG_LOG(ks.c_str());
         rocksdb::ColumnFamilyHandle* cf = cfp.get();
         if (NULL == cf)
         {
