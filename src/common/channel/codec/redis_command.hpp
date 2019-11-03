@@ -434,8 +434,10 @@ namespace ardb
                 {
                     std::string cmd;
                     cmd.append(m_cmd).append(" ");
+                    DEBUG_LOG(m_cmd)
                     for (uint32 i = 0; i < m_args.size(); i++)
                     {
+                        DEBUG_LOG(m_args[i])
                         cmd.append(m_args[i]);
                         if (i != m_args.size() - 1)
                         {
