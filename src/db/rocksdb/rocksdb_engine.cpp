@@ -860,7 +860,7 @@ OP_NAMESPACE_BEGIN
         key.GetNameSpace().AsString();
         key.GetKey().ToString(ks);
         DEBUG_LOG(ks.c_str());
-        DEBUG_LOG(key.GetNameSpace().AsString());
+        DEBUG_LOG(key.GetNameSpace());
 
         rocksdb::Status s;
         ColumnFamilyHandlePtr cfp = GetColumnFamilyHandle(ctx, key.GetNameSpace(), ctx.flags.create_if_notexist);
